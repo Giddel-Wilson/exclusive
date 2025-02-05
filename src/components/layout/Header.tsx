@@ -67,7 +67,7 @@ export function Header() {
     <header className="border-b">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold">
+          <Link to="/" className="hidden md:block text-xl font-bold">
             Exclusive
           </Link>
           
@@ -78,12 +78,12 @@ export function Header() {
           </div>
 
           <div className="flex items-center space-x-4">
-            <div className="hidden md:flex relative" ref={suggestionsRef}>
+            <div className="flex relative" ref={suggestionsRef}>
               <form onSubmit={handleSearch} className="relative">
                 <Input
                   type="search"
                   placeholder="Search"
-                  className="w-[200px] lg:w-[300px]"
+                  className="w-full lg:w-[300px]"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                 />
